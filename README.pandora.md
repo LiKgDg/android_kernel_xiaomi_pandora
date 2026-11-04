@@ -36,9 +36,18 @@ Linux version 6.12.69-android16-6-g43b5ab7e247d-abogki561813157-4k
 │   │   ├── dtb_00~11.dts        # 12 个设备树反编译源码（Canoe/CanoeP/Whale/WhaleP）
 │   │   ├── dtb_00~11.dtb        # 原始二进制设备树（备份）
 │   │   └── README.md            # dtb → 硬件配置对应关系
-│   └── dtbo/
-│       ├── dtbo_00.dtbo         # 板级设备树叠加层（二进制）
-│       └── dtbo_01.dtbo
+│   ├── dtbo/
+│   │   ├── dtbo_00~01.dtbo      # 板级设备树叠加层（二进制）
+│   │   └── dtbo_00~01.dts       # 板级设备树叠加层（反编译源码）
+│   └── modules/                 # 内核模块（.ko）分析
+│       ├── vendor_modules.txt   # vendor_dlkm 402 个厂商驱动模块名
+│       ├── system_modules.txt   # system_dlkm GKI 通用模块名
+│       ├── modules.load         # 开机加载顺序（665 个模块）
+│       ├── modules.dep / .softdep  # 模块依赖与软依赖
+│       ├── kmi-analysis.md      # KMI/vermagic 与关键模块依赖链分析
+│       └── README.md            # 本目录说明
+├── docs/
+│   └── kernel-analysis-pandora.md  # 完整内核分析报告（分区/源码/设备树/模块）
 └── README.pandora.md            # 本文件
 ```
 
